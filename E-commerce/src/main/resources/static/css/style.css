@@ -1,0 +1,105 @@
+.nav-link {
+    color: #333;
+  }
+  .search-button {
+    background-color: #3665f3;
+    color: white;
+  }
+  .banner {
+    background-color: #f5f5f5;
+  }
+  .category-icons {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .category-icons img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .category-label{
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .custom-gray-bg {
+    background-color: #f5f5f5; 
+    padding: 20px; 
+    border-radius: 5px; 
+}
+.category-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px; 
+  font-weight: bold;
+  text-align: center; 
+}
+
+.category-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-scroll .col {
+    display: inline-block;
+    float: none;
+}
+
+.custom-width {
+    width: 713px; /* Adjust this value as needed */
+    height: 825px; /* Keeps the aspect ratio */
+  }
+
+  .custom-widthh {
+    width: 100%;
+  }
+  
+
+.btn-toggle {
+    border: 1px solid #ced4da;
+    background-color: white; /* Default background for unselected */
+    color: #191919; /* Default text color for unselected */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.btn-toggle.active {
+    background-color: #191919; /* Background color when selected */
+    color: white; /* Text color when selected */
+}
+
+.btn-check:checked + .btn-toggle {
+    background-color: #191919; /* Background color when the radio is checked */
+    color: white; /* Text color when the radio is checked */
+}
+
+.btn-check:not(:checked) + .btn-toggle {
+    background-color: white; /* Background color when not checked */
+    color: #191919; /* Text color when not checked */
+}
+
+
+  .btn-social {
+    border: 1px solid #ced4da;
+    background-color: white;
+    color: #212529;
+  }
+  .btn-social:hover {
+    background-color: #f8f9fa;
+  }
+  .form-check-input:checked {
+    background-color: #e53238;
+    border-color: #e53238;
+  }
+
+  .smiling-image {
+    margin-left: 150px; /* Adjust this value as needed */
+  }
+
+  .form-margin {
+    margin-right: 130px;
+}
+.custom-margin {
+    margin-right: 130px; /* Adjust this value as needed */
+}

@@ -9,34 +9,7 @@
       href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css">
-    <style>
-      .nav-link {
-        color: #333;
-      }
-      .search-button {
-        background-color: #3665f3;
-        color: white;
-      }
-      .banner {
-        background-color: #f5f5f5;
-      }
-      .category-icons {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 0 auto;
-      }
-      .category-icons img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .category-label{
-        margin-top: 10px;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <header class="border-bottom"></header>
@@ -106,7 +79,7 @@
                     <p class="lead">Sign up NOW! And enjoy our amazing merchandise!</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="/placeholder.svg?height=300&width=500" alt="eBay Global Selling" class="img-fluid">
+                    <img src="/images/sale.jpg" alt="eBay Global Selling" class="img-fluid" style="height: 300px ; width: 500px;">
                 </div>
             </div>
         </div>
@@ -114,96 +87,182 @@
 
     <div class="container mt-5">
         <h2 class="mb-4">Top Selling Categories</h2>
-        <div class="row g-4">
+        <div class="category-scroll row flex-nowrap g-4">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #87CEFA;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Apple iPhone">
+                    <img src="/images/iphone.png" alt="Apple iPhone" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Apple iPhone</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Apple</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #FFD700;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Samsung Phones">
+                    <img src="/images/samsung.png" alt="Samsung" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Samsung Phones</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Samsung</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #FFA07A;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Cameras">
+                    <img src="/images/camera.png" alt="Camera" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Cameras</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Cameras</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #D3D3D3;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Handbags">
+                    <img src="/images/Handbags.png" alt="Handbags" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Handbags</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Handbags</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #FFB6C1;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Makeups">
+                    <img src="/images/makeups.png" alt="Makeups" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Makeups</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Makeups</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #FFA07A;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Watches">
+                    <img src="/images/watch.png" alt="Watch" style="width: 105px ; height: 120px;">
                 </div>
-                <p class="category-label">Watches</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Watches</a>
+                </p>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="category-icons" style="background-color: #98FB98;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Deals">
+                    <img src="/images/deal.png" alt="Deals" style="width: 105px ; height: 110px;">
                 </div>
-                <p class="category-label">Deals</p>
-            </div>
-        </div>
-        <h2 class="mb-4 mt-5">Fashion Vault</h2>
-        <div class="row g-4">
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #DEB887;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Coach">
-                </div>
-                <p class="category-label">Coach</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #FFB6C1;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Kate Spade">
-                </div>
-                <p class="category-label">Kate Spade</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #FFDAB9;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Michael Kors">
-                </div>
-                <p class="category-label">Michael Kors</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #98FB98;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Louis Vuitton">
-                </div>
-                <p class="category-label">Louis Vuitton</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #DAA520;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Prada">
-                </div>
-                <p class="category-label">Prada</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #FFB6C1;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Below Php5,000">
-                </div>
-                <p class="category-label">Below Php5,000</p>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="category-icons" style="background-color: #ADD8E6;">
-                    <img src="/placeholder.svg?height=120&width=120" alt="Backpack">
-                </div>
-                <p class="category-label">Backpack</p>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Deals</a>
+                </p>
             </div>
         </div>
     </div>
+   
+    <div class="container mt-5">
+        <h2 class="mb-4">Fashion Vault</h2>
+        <div class="category-scroll row flex-nowrap g-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #f5f5f5;">
+                    <img src="/images/coach.png" alt="Coach" style="width: 105px ; height: 100px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Coach</a>
+                </p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #FFD700;">
+                    <img src="/images/kate.png" alt="Kate Spade" style="width: 100px ; height: 100px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Kate Spade</a>
+                </p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #FFA07A;">
+                    <img src="/images/kors.png" alt="Michael Kors" style="width: 100px ; height: 100px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Michael Kors</a>
+                </p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #D3D3D3;">
+                    <img src="/images/lv.png" alt="Louis Vuitton" style="width: 100px ; height: 100px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Louis Vuitton</a>
+                </p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #FFB6C1;">
+                    <img src="/images/prada.png" alt="Prada" style="width: 100px; height: 100px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Prada</a>
+                </p>
+            </div>
+            
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #FFA07A;">
+                    <img src="/images/nike.png" alt="Nike" style="width: 110px ; height: 107px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Nike</a>
+                </p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="category-icons" style="background-color: #98FB98;">
+                    <img src="/images/adidas.png" alt="Adidas" style="width: 105px ; height: 107px;">
+                </div>
+                <p class="category-label">
+                    <a href="URL_HERE" style="text-decoration: none; color: inherit;">Adidas</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light pt-5">
+        <div class="container-fluid custom-gray-bg">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 text-center">
+                    <h5 class="fw-bold">Buy</h5>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="#" class="text-muted text-decoration-none">Registration</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Buying Guides</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Buyer Protection</a></li>
+                    </ul>
+                </div>
+               
+                <div class="col-md-3 col-sm-6 text-center">
+                    <h5 class="fw-bold">Sell</h5>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="#" class="text-muted text-decoration-none">Start Selling</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Learn to Sell</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Seller Protection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 text-center">
+                    <h5 class="fw-bold">Tools & Apps</h5>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="#" class="text-muted text-decoration-none">Mobile App</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">eBay Shops</a></li>
+                    </ul>
+                </div>
+               
+                <div class="col-md-3 col-sm-6 text-center">
+                    <h5 class="fw-bold">Help & Contact</h5>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="#" class="text-muted text-decoration-none">Customer Service</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">FAQs</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <hr>
+    
+            <div class="d-flex justify-content-between align-items-center pb-4">
+                <p class="text-muted mb-0">&copy; 2024 Nigga Skibidi. All Rights Reserved.</p>
+                <div class="d-flex">
+                    <a href="#" class="text-muted me-3 text-decoration-none"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-muted me-3 text-decoration-none"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-muted me-3 text-decoration-none"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-muted text-decoration-none"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
     <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
