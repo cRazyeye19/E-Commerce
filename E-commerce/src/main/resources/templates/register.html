@@ -1,19 +1,193 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot with Thymeleaf</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Page</title>
+    <link
+      rel="stylesheet"
+      href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css"
+    />
+    <style>
+      .btn-toggle {
+        border: 1px solid #ced4da;
+      }
+      .btn-toggle:not(.active) {
+        background-color: #f8f9fa;
+        color: #6c757d;
+      }
+      .btn-social {
+        border: 1px solid #ced4da;
+        background-color: white;
+        color: #212529;
+      }
+      .btn-social:hover {
+        background-color: #f8f9fa;
+      }
+      .form-check-input:checked {
+        background-color: #e53238;
+        border-color: #e53238;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="d-flex justify-content-between align-items-center p-3">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png"
+          alt="eBay Logo"
+          height="40"
+        />
+        <span class="text-body"
+          >Already have an account?
+          <a href="/login" class="text-decoration-underline">Sign in</a></span
+        >
+      </header>
 
-    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center mt-5">Hello, Thymeleaf!</h1>
-        <p class="text-center">Welcome to your Spring Boot application with Thymeleaf and Bootstrap integration.</p>
+      <div class="row">
+        <div class="col-lg-6 d-none d-lg-block">
+          <img
+            src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="People smiling"
+            class="img-fluid h-100 object-fit-cover rounded-3"
+          />
+        </div>
+        <div class="col-lg-6 p-4">
+          <h1 class="mb-4">Create an account</h1>
+
+          <div
+            class="btn-group w-100 mb-4"
+            role="group"
+            aria-label="Account type"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="account-type"
+              id="personal"
+              autocomplete="off"
+              checked
+            />
+            <label class="btn btn-toggle" for="personal">Personal</label>
+            <input
+              type="radio"
+              class="btn-check"
+              name="account-type"
+              id="business"
+              autocomplete="off"
+            />
+            <label class="btn btn-toggle" for="business">Business</label>
+          </div>
+
+          <form>
+            <!-- Personal Form -->
+            <div id="personal-wrapper" class="row mb-3">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Surname"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <div class="input-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required
+                />
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary mb-3 rounded-5">
+              Create personal account
+            </button>
+
+            <!-- Business Form -->
+            <div id="business-wrapper" class="d-none mb-3">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Business name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="btn btn-secondary mb-3 rounded-5" type="submit">
+                Create business account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-
+    <script src="../static/js/register.js"></script>
     <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+      const personalRadio = document.getElementById("personal");
+      const businessRadio = document.getElementById("business");
+      const personalForm = document.getElementById("personal-wrapper");
+      const businessForm = document.getElementById("business-wrapper");
+
+      personalRadio.addEventListener("change", () => {
+        if (personalRadio.checked) {
+          personalForm.classList.remove("d-none");
+          businessForm.classList.add("d-none");
+        }
+      });
+
+      businessRadio.addEventListener("change", () => {
+        if (businessRadio.checked) {
+          personalForm.classList.add("d-none");
+          businessForm.classList.remove("d-none");
+        }
+      });
+    </script>
+  </body>
 </html>
