@@ -48,8 +48,8 @@
 }
 
 .custom-width {
-    width: 713px; /* Adjust this value as needed */
-    height: 825px; /* Keeps the aspect ratio */
+    width: 713px; 
+    height: 825px; 
   }
 
   .custom-widthh {
@@ -59,24 +59,24 @@
 
 .btn-toggle {
     border: 1px solid #ced4da;
-    background-color: white; /* Default background for unselected */
-    color: #191919; /* Default text color for unselected */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    background-color: white; 
+    color: #191919; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .btn-toggle.active {
-    background-color: #191919; /* Background color when selected */
-    color: white; /* Text color when selected */
+    background-color: #191919; 
+    color: white; 
 }
 
 .btn-check:checked + .btn-toggle {
-    background-color: #191919; /* Background color when the radio is checked */
-    color: white; /* Text color when the radio is checked */
+    background-color: #191919; 
+    color: white; 
 }
 
 .btn-check:not(:checked) + .btn-toggle {
-    background-color: white; /* Background color when not checked */
-    color: #191919; /* Text color when not checked */
+    background-color: white; 
+    color: #191919; 
 }
 
 
@@ -94,12 +94,12 @@
   }
 
   .smiling-image {
-    margin-left: 150px; /* Adjust this value as needed */
+    margin-left: 150px; 
   }
 
   .form-margin {
     margin-right: 130px;
 }
 .custom-margin {
-    margin-right: 130px; /* Adjust this value as needed */
+    margin-right: 130px; 
 }
