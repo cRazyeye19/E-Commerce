@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Details</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <header class="border-bottom">
+    <div class="container">
+      <div class="row py-2 align-items-center">
+        <div class="col d-flex align-items-center">
+          <span class="me-2">Hi!</span>
+          <a href="/login" class="text-decoration-underline me-1">Sign in</a>
+          <span class="me-1">or</span>
+          <a href="/register" class="text-decoration-underline">Register</a>
+        </div>
+        <div class="col d-flex justify-content-end align-items-center">
+          <a href="/products" class="text-decoration-none me-3 text-body">Products</a>
+          <div class="dropdown d-inline-block me-3">
+            <button class="btn btn-link text-decoration-none p-0 dropdown-toggle text-body" type="button" id="myEbayDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              My eBay
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="myEbayDropdown">
+              <li><a class="dropdown-item" href="/myaccount">My Account</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            </ul>
+          </div>
+          <i class="bi bi-bell me-3"></i>
+          <a href="/cart">
+            <i class="bi bi-cart3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+ 
+    <div class="container-fluid mt-4 account-sidebar">
+        <div class="row">
+            <div class="col-md-3 account-sidebar">
+                <h3 class="mb-4">My Account</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#summary" data-bs-toggle="tab">
+                            <i class="fas fa-tachometer-alt me-2"></i> Summary
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recently-viewed" data-bs-toggle="tab">
+                            <i class="fas fa-eye me-2"></i> Recently Viewed
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bids-offers" data-bs-toggle="tab">
+                            <i class="fas fa-gavel me-2"></i> Bids/Offers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#purchase-history" data-bs-toggle="tab">
+                            <i class="fas fa-shopping-bag me-2"></i> Purchase History
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#watching" data-bs-toggle="tab">
+                            <i class="fas fa-heart me-2"></i> Watching
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#saved-searches" data-bs-toggle="tab">
+                            <i class="fas fa-search me-2"></i> Saved Searches
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sell" data-bs-toggle="tab">
+                            <i class="fas fa-tag me-2"></i> Sell
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 account-content">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="summary">
+                        <h2 class="mb-4">Account Summary</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Personal Information</h5>
+                                        <p class="card-text">
+                                            <strong>Name:</strong> John Doe<br>
+                                            <strong>Email:</strong> johndoe@example.com<br>
+                                            <strong>Member Since:</strong> January 1, 2020
+                                        </p>
+                                        <a href="#" class="btn btn-ebay btn-sm">Edit Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Account Status</h5>
+                                        <p class="card-text">
+                                            <strong>Feedback Score:</strong> 100<br>
+                                            <strong>Buyer Status:</strong> Active<br>
+                                            <strong>Seller Status:</strong> Active
+                                        </p>
+                                        <a href="#" class="btn btn-ebay btn-sm">View Feedback</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="recently-viewed">
+                        <h2 class="mb-4">Recently Viewed Items</h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="/placeholder.svg?height=200&width=200" class="card-img-top" alt="Product 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vintage Watch</h5>
+                                        <p class="card-text">$99.99</p>
+                                        <a href="#" class="btn btn-ebay btn-sm">View Item</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="/placeholder.svg?height=200&width=200" class="card-img-top" alt="Product 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Leather Bag</h5>
+                                        <p class="card-text">$149.99</p>
+                                        <a href="#" class="btn btn-ebay btn-sm">View Item</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="/placeholder.svg?height=200&width=200" class="card-img-top" alt="Product 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wireless Earbuds</h5>
+                                        <p class="card-text">$79.99</p>
+                                        <a href="#" class="btn btn-ebay btn-sm">View Item</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bids-offers">
+                        <h2 class="mb-4">Bids and Offers</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Your Bid/Offer</th>
+                                    <th>Current Price</th>
+                                    <th>Status</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Antique Lamp</td>
+                                    <td>$50.00</td>
+                                    <td>$55.00</td>
+                                    <td><span class="badge bg-warning">Outbid</span></td>
+                                    <td>May 15, 2023</td>
+                                </tr>
+                                <tr>
+                                    <td>Smartphone</td>
+                                    <td>$300.00</td>
+                                    <td>$300.00</td>
+                                    <td><span class="badge bg-success">Winning</span></td>
+                                    <td>May 18, 2023</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="purchase-history">
+                        <h2 class="mb-4">Purchase History</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vintage Camera</td>
+                                    <td>$199.99</td>
+                                    <td>April 30, 2023</td>
+                                    <td><span class="badge bg-success">Delivered</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Bluetooth Speaker</td>
+                                    <td>$79.99</td>
+                                    <td>May 5, 2023</td>
+                                    <td><span class="badge bg-primary">Shipped</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="watching">
+                        <h2 class="mb-4">Watching</h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="/placeholder.svg?height=200&width=200" class="card-img-top" alt="Watched Item 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vintage Record Player</h5>
+                                        <p class="card-text">Current Bid: $150.00</p>
+                                        <p class="card-text">Ends in: 2d 5h</p>
+                                        <a href="#" class="btn btn-ebay btn-sm">Bid Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="/placeholder.svg?height=200&width=200" class="card-img-top" alt="Watched Item 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Leather Jacket</h5>
+                                        <p class="card-text">Buy It Now: $199.99</p>
+                                        <a href="#" class="btn btn-ebay btn-sm">Buy It Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="saved-searches">
+                        <h2 class="mb-4">Saved Searches</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Vintage Cameras
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-primary me-2">View Results</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Mechanical Keyboards
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-primary me-2">View Results</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="sell">
+                        <h2 class="mb-4">Sell</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Create a Listing</h5>
+                                        <p class="card-text">Start selling your items on eBay Inspired.</p>
+                                        <a href="#" class="btn btn-ebay">Create Listing</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Seller Dashboard</h5>
+                                        <p class="card-text">Manage your listings and track your sales.</p>
+                                        <a href="#" class="btn btn-ebay">Go to Dashboard</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light mt-5 py-3">
+        <div class="container text-center">
+            <p>&copy; 2023 eBay Inspired. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

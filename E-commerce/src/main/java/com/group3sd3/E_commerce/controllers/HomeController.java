@@ -2,6 +2,8 @@ package com.group3sd3.E_commerce.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -38,5 +40,10 @@ public class HomeController {
         return "cart";
     
     }
+    @GetMapping("/myaccount")
+    public String myaccount() {
+        return "myaccount";
+    }
+    
     
 }
