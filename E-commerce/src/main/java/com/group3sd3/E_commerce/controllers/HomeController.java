@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 
+
 @Controller
 public class HomeController {
     @GetMapping("/")
@@ -32,4 +33,10 @@ public class HomeController {
     public String ViewProduct() {
         return "view_product";
     }
+    @GetMapping("/cart")
+    public String cart() {
+        return "cart";
+    
+    }
+    
 }
