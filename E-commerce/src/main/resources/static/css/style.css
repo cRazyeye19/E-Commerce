@@ -132,3 +132,37 @@
 .nav-link.active {
     background-color: #e9ecef;
 }
+
+/* Watchlist */
+.sidebar {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+.nav-link.active {
+    background-color: #e9ecef;
+}
+.watchlist-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.watchlist-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 0;
+}
+.watchlist-item:last-child {
+    border-bottom: none;
+}
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00a65a;
+}
+.time-left {
+    font-size: 0.9rem;
+    color: #721c24;
+}

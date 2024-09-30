@@ -44,6 +44,13 @@ public class HomeController {
     public String myaccount() {
         return "myaccount";
     }
-    
+    @GetMapping("/settings")
+    public String settings() {
+        return "settings";
+    }
+    @GetMapping("/watchlist")
+    public String watchlist() {
+        return "watchlist";
+    }
     
 }
