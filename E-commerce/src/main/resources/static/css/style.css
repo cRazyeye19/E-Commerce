@@ -125,10 +125,10 @@
 }
 
 /* Account */
-.account-sidebar {
+.sidebar {
     background-color: #f8f9fa;
-    border-right: 1px solid #dee2e6;
+    min-height: calc(100vh - 56px);
 }
-.account-content {
-    min-height: 500px;
+.nav-link.active {
+    background-color: #e9ecef;
 }
