@@ -52,5 +52,29 @@ public class HomeController {
     public String watchlist() {
         return "watchlist";
     }
-    
+    @GetMapping("/home")
+    public String home(){
+        return "index";
+    }
+    @GetMapping("/tshirt")
+    public String tshirt() {
+        return "products_clothing";
+    }
+    @GetMapping("/purchase")
+    public String purchase() {
+        return "purchases";
+    }
+    @GetMapping("/listings")
+    public String listing() {
+        return "listings";
+    }
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin_dashboard";
+    }
+
+    @GetMapping("/seller")
+    public String seller() {
+        return "seller_dashboard";
+    }
 }

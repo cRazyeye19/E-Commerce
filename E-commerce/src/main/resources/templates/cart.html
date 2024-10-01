@@ -1,153 +1,178 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart</title>
-    <link
-      rel="stylesheet"
-      href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-
- 
-  <body class="bg-light mt-5">
-    <div class="container py-5">
-        <h1 class="text-center mb-5">Your Shopping Cart</h1>
-        <div class="row g-4">
-            <div class="col-lg-8">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <!-- Cart Item 1 -->
-                        <div class="row align-items-center mb-4 border-bottom pb-4">
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <img src="/images/handbags.png" alt="Product Image" class="cart-item-image rounded" style="width: 80px ; height: 80px;">
-                            </div>
-                            <div class="col-md-4 mb-3 mb-md-0">
-                                <h5>White Bag</h5>
-                                <p class="text-muted small">Item #: 123456789</p>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <span class="fw-bold">$199.99</span>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <div class="input-group input-group-sm">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="number" class="form-control text-center quantity-input" value="1" min="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart</title>
+        <link
+          rel="stylesheet"
+          href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+      </head>
+      
+<header class="border-bottom">
+    <div class="container">
+      <div class="row py-2 align-items-center">
+        <div class="col d-flex align-items-center">
+          <span class="me-2">Hi!</span>
+          <a href="/login" class="text-decoration-underline me-1">Sign in</a>
+          <span class="me-1">or</span>
+          <a href="/register" class="text-decoration-underline">Register</a>
+        </div>
+        <div class="col d-flex justify-content-end align-items-center">
+          <a href="/products" class="text-decoration-none me-3 text-body">Products</a>
+          <div class="dropdown d-inline-block me-3">
+            <button class="btn btn-link text-decoration-none p-0 dropdown-toggle text-body" type="button" id="myEbayDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              My eBay
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="myEbayDropdown">
+              <li><a class="dropdown-item" href="/myaccount">My Account</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            </ul>
+          </div>
+          <i class="bi bi-bell me-3"></i>
+          <a href="/cart">
+            <i class="bi bi-cart3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-lg-8 cart-container p-4 mb-4">
+                <h1 class="mb-4">Shopping cart <span class="text-muted">(3 items)</span></h1>
+                
+                <!-- Cart items -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 col-4">
+                            <img src="/images/limited5.jpg?height=120&width=120" alt="Vintage Watch" class="item-image img-fluid">
+                        </div>
+                        <div class="col-md-6 col-8">
+                            <h5 class="mb-1">Vintage Leather Strap Watch</h5>
+                            <p class="text-muted mb-1">Condition: Used - Excellent</p>
+                            <p class="mb-1"><small>Seller: vintage_treasures (4,829 <i class="fas fa-star text-warning"></i>)</small></p>
+                            <!-- <p th:text="${item.description}" class="mb-0">Elegant timepiece with genuine leather strap</p> -->
+                        </div>
+                        <div class="col-md-3 col-12 mt-3 mt-md-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="fw-bold mb-1">$49.99</p>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
                                 </div>
-                            </div>
-                            <div class="col-md-2 text-end">
-                                <button type="button" class="btn btn-link text-danger p-0">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <button class="btn btn-link text-danger"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
-
-                        <!-- Cart Item 2 -->
-                        <div class="row align-items-center mb-4 border-bottom pb-4">
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <img src="/images/watch.png" alt="Product Image" class="cart-item-image rounded" style="width: 80px ; height: 80px;">
-                            </div>
-                            <div class="col-md-4 mb-3 mb-md-0">
-                                <h5>Leather Watch</h5>
-                                <p class="text-muted small">Item #: 987654321</p>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <span class="fw-bold">$89.99</span>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <div class="input-group input-group-sm">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="number" class="form-control text-center quantity-input" value="2" min="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 col-4">
+                            <img src="/images/limited6.jpg?height=120&width=120" alt="Smartphone Case" class="item-image img-fluid">
+                        </div>
+                        <div class="col-md-6 col-8">
+                            <h5 class="mb-1">Premium Smartphone Case</h5>
+                            <p class="text-muted mb-1">Condition: New</p>
+                            <p class="mb-1"><small>Seller: tech_accessories_pro (10,547 <i class="fas fa-star text-warning"></i>)</small></p>
+                            <!-- <p th:text="${item.description}" class="mb-0">Durable and stylish protection for your device</p> -->
+                        </div>
+                        <div class="col-md-3 col-12 mt-3 mt-md-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="fw-bold mb-1">$14.99</p>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
                                 </div>
-                            </div>
-                            <div class="col-md-2 text-end">
-                                <button type="button" class="btn btn-link text-danger p-0">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <button class="btn btn-link text-danger"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
-
-                        <!-- Cart Item 3 -->
-                        <div class="row align-items-center">
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <img src="/images/camera.png" alt="Product Image" class="cart-item-image rounded" style="width: 80px ; height: 80px;">
-                            </div>
-                            <div class="col-md-4 mb-3 mb-md-0">
-                                <h5>Camera</h5>
-                                <p class="text-muted small">Item #: 456789123</p>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <span class="fw-bold">$59.99</span>
-                            </div>
-                            <div class="col-md-2 mb-3 mb-md-0">
-                                <div class="input-group input-group-sm">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="number" class="form-control text-center quantity-input" value="1" min="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 col-4">
+                            <img src="/images/limited7.jpg?height=120&width=120" alt="Wireless Earbuds" class="item-image img-fluid">
+                        </div>
+                        <div class="col-md-6 col-8">
+                            <h5 class="mb-1">True Wireless Earbuds</h5>
+                            <p class="text-muted mb-1">Condition: New</p>
+                            <p class="mb-1"><small>Seller: audio_experts (15,203 <i class="fas fa-star text-warning"></i>)</small></p>
+                            <!-- <p th:text="${item.description}" class="mb-0">High-quality sound with long battery life</p> -->
+                        </div>
+                        <div class="col-md-3 col-12 mt-3 mt-md-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="fw-bold mb-1">$79.99</p>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
                                 </div>
-                            </div>
-                            <div class="col-md-2 text-end">
-                                <button type="button" class="btn btn-link text-danger p-0">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <button class="btn btn-link text-danger"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-lg-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Order Summary</h5>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Subtotal:</span>
-                            <span>$439.96</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Estimated Shipping:</span>
-                            <span>$5.99</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Estimated Tax:</span>
-                            <span>$44.00</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between mb-4">
-                            <span class="fw-bold">Total:</span>
-                            <span class="fw-bold">$489.95</span>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button">
-                                <i class="bi bi-lock-fill me-2"></i>Checkout
-                            </button>
-                            <button class="btn btn-outline-secondary" type="button">
-                                <i class="bi bi-arrow-left me-2"></i>Continue Shopping
-                            </button>
-                        </div>
+                <!-- Order summary -->
+                <div class="cart-container p-4">
+                    <h4 class="mb-4">Order summary</h4>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal (3 items)</span>
+                        <span>$144.97</span>
                     </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Shipping</span>
+                        <span>$10.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Estimated tax</span>
+                        <span>$11.60</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold mb-4">
+                        <span>Order total</span>
+                        <span>$166.57</span>
+                    </div>
+                    <button class="btn btn-ebay w-100 mb-3">Go to checkout</button>
+                    <p class="text-center mb-0"><i class="fas fa-lock me-2"></i>Secure checkout</p>
                 </div>
-                <div class="card mt-4 shadow-sm">
-                    <div class="card-body">
-                        <h6 class="card-title mb-3">Payment is under maintenance</h6>
-                        <div class="d-flex justify-content-between">
-                            <i class="bi bi-credit-card fs-2"></i>
-                            <i class="bi bi-paypal fs-2"></i>
-                            <i class="bi bi-bank fs-2"></i>
-                            <i class="bi bi-wallet2 fs-2"></i>
-                        </div>
+                
+                <div class="mt-4 cart-container p-4">
+                    <h5 class="mb-3">Accepted payment methods</h5>
+                    <div class="d-flex justify-content-between">
+                        <i class="fab fa-cc-visa fa-2x text-muted"></i>
+                        <i class="fab fa-cc-mastercard fa-2x text-muted"></i>
+                        <i class="fab fa-cc-amex fa-2x text-muted"></i>
+                        <i class="fab fa-cc-paypal fa-2x text-muted"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- 
+    <script th:inline="javascript">
+        // Dynamic functionality can be added here in the future
+        // For example:
+        // const cartItems = /*[[${cartItems}]]*/ [];
+        // function updateCart() {
+        //     // Update cart logic
+        // }
+    </script>
+    -->
 </body>
   </html>

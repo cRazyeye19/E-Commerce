@@ -166,3 +166,192 @@
     font-size: 0.9rem;
     color: #721c24;
 }
+
+/* Clothing & Apparels */
+.scrollable-container {
+    height: 700px; 
+    overflow-y: auto;
+  }
+
+/* My Purchases */
+.sidebar {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+.nav-link.active {
+    background-color: #e9ecef;
+}
+.purchases-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.purchase-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 0;
+}
+.purchase-item:last-child {
+    border-bottom: none;
+}
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00a65a;
+}
+.status {
+    font-weight: bold;
+}
+.status-delivered {
+    color: #28a745;
+}
+.status-shipped {
+    color: #007bff;
+}
+.status-processing {
+    color: #ffc107;
+}
+
+/* My Listings */
+.sidebar {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+.nav-link.active {
+    background-color: #e9ecef;
+}
+.listings-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.listing-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 0;
+}
+.listing-item:last-child {
+    border-bottom: none;
+}
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00a65a;
+}
+.status {
+    font-weight: bold;
+}
+.status-active {
+    color: #28a745;
+}
+.status-ended {
+    color: #dc3545;
+}
+.status-draft {
+    color: #ffc107;
+}
+
+/* Add to Cart */
+body {
+    background-color: #f8f9fa;
+}
+.cart-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.cart-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+}
+.item-image {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+}
+.btn-ebay {
+    background-color: #0064D2;
+    color: white;
+}
+.btn-ebay:hover {
+    background-color: #004985;
+    color: white;
+}
+.text-ebay {
+    color: #0064D2;
+}
+.quantity-input {
+    width: 60px;
+}
+/* Admin Dashboard */
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    background-color: #0064D2;
+    min-height: 100vh;
+}
+.sidebar .nav-link {
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.sidebar .nav-link:hover {
+    background-color: #004985;
+}
+.sidebar .nav-link.active {
+    background-color: #004985;
+}
+.content {
+    padding: 20px;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+.btn-ebay {
+    background-color: #0064D2;
+    color: white;
+}
+.btn-ebay:hover {
+    background-color: #004985;
+    color: white;
+}
+.card-counter {
+    box-shadow: 2px 2px 10px #DADADA;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+}
+.card-counter:hover {
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+}
+.card-counter {
+    display: flex;                 /* Use flexbox for better alignment */
+    flex-direction: column;       /* Arrange children in a column */
+    justify-content: center;      /* Center content vertically */
+    align-items: center;          /* Center content horizontally */
+    padding: 20px;                /* Add padding for spacing */
+    border-radius: 10px;          /* Optional: Add rounded corners */
+    height: 100%;                 /* Ensure full height of the parent */
+}
+
+.count-numbers {
+    font-size: 2rem;              /* Adjust font size */
+    font-weight: bold;            /* Make it bold */
+    margin-top: 10px;             /* Space above the numbers */
+    text-align: center;           /* Center text horizontally */
+}
+
+.count-name {
+    font-size: 1rem;              /* Adjust font size for name */
+    text-align: center;           /* Center text */
+}
+
