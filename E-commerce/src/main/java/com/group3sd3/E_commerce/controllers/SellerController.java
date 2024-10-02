@@ -1,0 +1,18 @@
+package com.group3sd3.E_commerce.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class SellerController {
+
+    @GetMapping("/seller")
+    public String SellerIndex() {
+        return "seller/index";
+    }
+
+    @GetMapping("/add_product")
+    public String AddProduct() {
+        return "seller/add_product";
+    }
+}
