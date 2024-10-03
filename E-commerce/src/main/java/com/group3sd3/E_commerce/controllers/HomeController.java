@@ -71,4 +71,28 @@ public class HomeController {
     public String seller() {
         return "seller_dashboard";
     }
+
+    // /* FOR THE MEAN TIME AND FOR TESTING */
+    // @GetMapping("/orders")
+    // public String orders() {
+    //     return "orders";
+    // }
+    // @GetMapping("/analytics")
+    // public String analytics() {
+    //     return "seller_analytics";
+    // }
+    // @GetMapping("/messages")
+    // public String messages() {
+    //     return "seller_messages";
+    // }
+    // @GetMapping("/sproducts")
+    // public String sproducts() {
+    //     return "seller_products";
+    // }
+    // @GetMapping("/ssettings")
+    // public String ssettigs() {
+    //     return "seller_settings";
+    // }
+    
+
 }
