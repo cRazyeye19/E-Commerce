@@ -72,10 +72,15 @@ public class HomeController {
         return "seller_dashboard";
     }
 
+    @GetMapping("acategories")
+    public String acategories() {
+        return "admin_categories";
+    }
+
     // /* FOR THE MEAN TIME AND FOR TESTING */
     // @GetMapping("/orders")
     // public String orders() {
-    //     return "orders";
+    //     return "seller_orders";
     // }
     // @GetMapping("/analytics")
     // public String analytics() {
@@ -93,6 +98,23 @@ public class HomeController {
     // public String ssettigs() {
     //     return "seller_settings";
     // }
-    
 
+    // /* FOR THE MEAN TIME AND FOR TESTING */
+    //     @GetMapping("ausers")
+    //     public String ausers() {
+    //         return "admin_users";
+    //     }
+    //     @GetMapping("aadmin")
+    //     public String aadmin() {
+    //         return "admin_admin";
+    //     }
+    //     @GetMapping("aproducts")
+    //     public String aprodcuts() {
+    //         return "admin_products";
+    //     }
+    //     @GetMapping("areports")
+    //     public String areports() {
+    //         return "admin_reports";
+    //     }
+    // }
 }

@@ -5,9 +5,16 @@
     color: maroon;
 }
 .search-button {
-    background-color: #3665f3;
-    color: white;
+    background-color: maroon;
+    color: yellow;
+    transition: background-color 0.3s, color 0.3s; 
 }
+
+.search-button:hover {
+    background-color: yellow;
+    color: maroon;
+}
+
 .banner {
     background-color: #f5f5f5;
 }
@@ -668,6 +675,43 @@ body {
     font-size: 2rem;
     color: var(--ebay-blue);
 }
+/* Register */
+:root {
+    --ebay-blue: #0064D2;
+    --ebay-red: #e53238;
+    --ebay-yellow: #f5af02;
+    --ebay-green: #86b817;
+}
+.btn-ebay {
+    background-color: var(--ebay-blue);
+    color: white;
+}
+.btn-ebay:hover {
+    background-color: #004985;
+    color: white;
+}
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.feature-icon {
+    font-size: 2rem;
+    color: var(--ebay-blue);
+}
+.testimonial-card {
+    border-left: 4px solid var(--ebay-yellow);
+}
+
+/* */
+
+
 
 
 
