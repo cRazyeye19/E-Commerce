@@ -107,22 +107,5 @@ public class HomeController {
     //     return "seller_settings";
     // }
 
-    /* FOR THE MEAN TIME AND FOR TESTING */
-        @GetMapping("ausers")
-        public String ausers() {
-            return "admin_users";
-        }
-        @GetMapping("aadmin")
-        public String aadmin() {
-            return "admin_admin";
-        }
-        @GetMapping("amessages")
-        public String aprodcuts() {
-            return "admin_messages";
-        }
-        @GetMapping("areports")
-        public String areports() {
-            return "admin_reports";
-        }
 }
 
