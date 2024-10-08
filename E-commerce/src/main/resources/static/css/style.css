@@ -1,5 +1,46 @@
+/* Landing Page */
+@keyframes slideIn {
+    from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }
+
+            .animated {
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+            .slide-in {
+            animation-name: slideIn;
+        }
+  
+.carousel-image {
+    border-radius: 20px;
+}
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .slide-in {
+    animation-name: slideIn;
+  }
+  
+  .fade-in {
+    animation-name: fadeIn;
+  }
+  
+
 .nav-link {
-    color: #333;
+    color: maroon;
+}
+.nav-link:hover {
+    color: black; /* Optional: Change color on hover if you want */
 }
 .maroon-text {
     color: maroon;
@@ -9,6 +50,9 @@
     color: yellow;
     transition: background-color 0.3s, color 0.3s; 
 }
+.yellow-text {
+    color: yellow;
+}
 
 .search-button:hover {
     background-color: yellow;
@@ -16,8 +60,12 @@
 }
 
 .banner {
-    background-color: #f5f5f5;
+    background-color: maroon;
 }
+.bg-gold {
+    background-color: gold; /* or use a hex code like #FFD700 for a different shade */
+}
+
 .category-icons {
     width: 100px;
     height: 100px;
@@ -115,36 +163,25 @@
 .cart-item:hover {
     background-color: #f8f9fa;
 }
-
 /* View Product */
-
 .product-image {
     max-height: 400px;
     object-fit: contain;
 }
 .btn-ebay {
-    background-color: #0064D2;
-    color: white;
+    background-color: maroon;
+    color: yellow;
+    transition: background-color 0.3s, color 0.3s; 
 }
 .btn-ebay:hover {
-    background-color: #004985;
-    color: white;
+    background-color: yellow;
+    color: maroon;
 }
-
 /* Account */
-.sidebar {
-    background-color: #f8f9fa;
-    min-height: calc(100vh - 56px);
-}
 .nav-link.active {
     background-color: #e9ecef;
 }
-
 /* Watchlist */
-.sidebar {
-    background-color: #f8f9fa;
-    min-height: calc(100vh - 56px);
-}
 .nav-link.active {
     background-color: #e9ecef;
 }
@@ -173,18 +210,12 @@
     font-size: 0.9rem;
     color: #721c24;
 }
-
 /* Clothing & Apparels */
 .scrollable-container {
     height: 700px; 
     overflow-y: auto;
-  }
-
-/* My Purchases */
-.sidebar {
-    background-color: #f8f9fa;
-    min-height: calc(100vh - 56px);
 }
+/* My Purchases */
 .nav-link.active {
     background-color: #e9ecef;
 }
@@ -223,13 +254,6 @@
 }
 
 /* My Listings */
-.sidebar {
-    background-color: #f8f9fa;
-    min-height: calc(100vh - 56px);
-}
-.nav-link.active {
-    background-color: #e9ecef;
-}
 .listings-header {
     background-color: #f8f9fa;
     border-bottom: 1px solid #dee2e6;
@@ -246,14 +270,6 @@
     height: 100px;
     object-fit: cover;
 }
-.price {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #00a65a;
-}
-.status {
-    font-weight: bold;
-}
 .status-active {
     color: #28a745;
 }
@@ -267,6 +283,7 @@
 /* Add to Cart */
 body {
     background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
 }
 .cart-container {
     background-color: #ffffff;
@@ -282,14 +299,6 @@ body {
     max-height: 120px;
     object-fit: contain;
 }
-.btn-ebay {
-    background-color: #0064D2;
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
 .text-ebay {
     color: #0064D2;
 }
@@ -297,36 +306,16 @@ body {
     width: 60px;
 }
 /* Admin Dashboard */
-body {
-    background-color: #f8f9fa;
-}
-.sidebar {
-    background-color: #0064D2;
-    min-height: 100vh;
-}
-.sidebar .nav-link {
-    color: #ffffff;
-    padding: 10px 20px;
-}
-.sidebar .nav-link:hover {
-    background-color: #004985;
-}
 .sidebar .nav-link.active {
-    background-color: #004985;
+    border-left-color: var(--ebay-blue);
 }
 .content {
     padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
 }
 .table th, .table td {
     vertical-align: middle;
-}
-.btn-ebay {
-    background-color: #0064D2;
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
 }
 .card-counter {
     box-shadow: 2px 2px 10px #DADADA;
@@ -363,53 +352,40 @@ body {
 }
 /* Seller */
 :root {
-    --ebay-blue: #0064D2;
+    --ebay-blue: yellow;
     --ebay-red: #e53238;
     --ebay-yellow: #f5af02;
     --ebay-green: #86b817;
-}
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
 }
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
 }
 .sidebar {
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    background-color: maroon;
+    box-shadow: 30px 0 30px rgba(0,0,0,0.1);
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    display: flex; /* Use flexbox to enable full height */
+    flex-direction: column; /* Stack the items vertically */
+    position: sticky;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background-color: #410008;
+    border-radius: 20px;
 }
 .sidebar .nav-link {
-    color: #333;
-    padding: 10px 20px;
-    border-left: 3px solid transparent;
+    color: yellow;  /* Makes the text yellow */
 }
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: #f1f3f5;
-    border-left-color: var(--ebay-blue);
+
+.sidebar .nav-link i {
+    color: yellow;  /* Makes the icons yellow */
 }
-.content {
-    padding: 20px;
-}
-.card {
-    border: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
+
 .card-header {
     background-color: #ffffff;
     border-bottom: 2px solid var(--ebay-blue);
-}
-.table th, .table td {
-    vertical-align: middle;
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
 }
 .stat-card {
     border-radius: 15px;
@@ -430,121 +406,21 @@ body {
 .table-sm td, .table-sm th {
     padding: 0.5rem;
 }
+/* Seller - Settings*/
+.active-tab {
+    background-color: maroon !important; /* Ensures the background color overrides any other styles */
+    color: yellow; /* Optional: changes the text color to white for better contrast */
+}
+
 /* Seller - Orders */
-:root {
-    --ebay-blue: #0064D2;
-    --ebay-red: #e53238;
-    --ebay-yellow: #f5af02;
-    --ebay-green: #86b817;
-}
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.sidebar {
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-.sidebar .nav-link {
-    color: #333;
-    padding: 10px 20px;
-    border-left: 3px solid transparent;
-}
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: #f1f3f5;
-    border-left-color: var(--ebay-blue);
-}
-.content {
-    padding: 20px;
-}
 .card {
     border: none;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-.card-header {
-    background-color: #ffffff;
-    border-bottom: 2px solid var(--ebay-blue);
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
-.stat-card {
-    transition: transform 0.3s;
-}
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-.chart-container {
-    position: relative;
-    height: 300px;
-    width: 100%;
-}
-
-/* Seller - Analytics*/
-:root {
-    --ebay-blue: #0064D2;
-    --ebay-red: #e53238;
-    --ebay-yellow: #f5af02;
-    --ebay-green: #86b817;
-}
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.sidebar {
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-.sidebar .nav-link {
-    color: #333;
-    padding: 10px 20px;
-    border-left: 3px solid transparent;
-    transition: all 0.3s ease;
-}
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: #f1f3f5;
-    border-left-color: var(--ebay-blue);
-    color: var(--ebay-blue);
-}
-.content {
-    padding: 20px;
-}
-.card {
-    border: none;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
+/* Seller - Analytics*/
 .card:hover {
     transform: translateY(-5px);
-}
-.card-header {
-    background-color: #ffffff;
-    border-bottom: 2px solid var(--ebay-blue);
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-    transition: all 0.3s ease;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
-.stat-card {
-    border-radius: 15px;
 }
 .stat-icon {
     font-size: 2.5rem;
@@ -570,126 +446,17 @@ body {
 }
 
 /* Seller - Products */
-:root {
-    --ebay-blue: #0064D2;
-    --ebay-red: #e53238;
-    --ebay-yellow: #f5af02;
-    --ebay-green: #86b817;
-}
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.sidebar {
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-.sidebar .nav-link {
-    color: #333;
-    padding: 10px 20px;
-    border-left: 3px solid transparent;
-}
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: #f1f3f5;
-    border-left-color: var(--ebay-blue);
-}
-.content {
-    padding: 20px;
-}
-.card {
-    border: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-.card-header {
-    background-color: #ffffff;
-    border-bottom: 2px solid var(--ebay-blue);
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
 .product-image {
     width: 100px;
     height: 100px;
     object-fit: cover;
 }
-.table th, .table td {
-    vertical-align: middle;
-}
 /* Seller Settings */
-:root {
-    --ebay-blue: #0064D2;
-    --ebay-red: #e53238;
-    --ebay-yellow: #f5af02;
-    --ebay-green: #86b817;
-}
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.sidebar {
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-.sidebar .nav-link {
-    color: #333;
-    padding: 10px 20px;
-    border-left: 3px solid transparent;
-}
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    background-color: #f1f3f5;
-    border-left-color: var(--ebay-blue);
-}
-.content {
-    padding: 20px;
-}
-.card {
-    border: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-.card-header {
-    background-color: #ffffff;
-    border-bottom: 2px solid var(--ebay-blue);
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
 .settings-icon {
     font-size: 2rem;
     color: var(--ebay-blue);
 }
 /* Register */
-:root {
-    --ebay-blue: #0064D2;
-    --ebay-red: #e53238;
-    --ebay-yellow: #f5af02;
-    --ebay-green: #86b817;
-}
-.btn-ebay {
-    background-color: var(--ebay-blue);
-    color: white;
-}
-.btn-ebay:hover {
-    background-color: #004985;
-    color: white;
-}
 .hero-section {
     background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;

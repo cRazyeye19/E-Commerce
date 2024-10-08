@@ -17,5 +17,5 @@ public class SellerController {
     public String AddProduct() {
         return "seller/add_product";
     }
-
+    
 }

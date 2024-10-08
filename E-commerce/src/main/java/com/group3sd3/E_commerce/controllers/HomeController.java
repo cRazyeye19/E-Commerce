@@ -62,20 +62,28 @@ public class HomeController {
     public String listing() {
         return "listings";
     }
+
+    @GetMapping("acategories")
+    public String acategories() {
+        return "admin_categories";
+    }
+
+    /* Kurt's Testing Mapping For Design */
     @GetMapping("/admin")
     public String admin() {
-        return "admin_dashboard";
+        return "/admin/admin_dashboard";
     }
+
+    // @GetMapping("/seller")
+    // public String seller() {
+    //     return "/seller/seller_dashboard";
+    // }
 
     @GetMapping("/seller")
     public String seller() {
         return "seller_dashboard";
     }
 
-    @GetMapping("acategories")
-    public String acategories() {
-        return "admin_categories";
-    }
 
     // /* FOR THE MEAN TIME AND FOR TESTING */
     // @GetMapping("/orders")

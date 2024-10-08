@@ -50,45 +50,50 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#dashboard">
+                            <a class="nav-link active mb-3" href="/dashboard">
                                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#sproducts">
+                            <a class="nav-link mb-3" href="/sproducts">
                                 <i class="fas fa-box me-2"></i>Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#orders">
+                            <a class="nav-link mb-3" href="/orders">
                                 <i class="fas fa-shopping-cart me-2"></i>Orders
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#analytics">
+                            <a class="nav-link mb-3" href="/analytics">
                                 <i class="fas fa-chart-line me-2"></i>Analytics
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#messages">
+                            <a class="nav-link mb-3" href="/messages">
                                 <i class="fas fa-envelope me-2"></i>Messages
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#ssettings">
+                            <a class="nav-link mb-3" href="/ssettings">
                                 <i class="fas fa-cog me-2"></i>Settings
+                            </a>
+                        </li>
+                        <!-- Logout -->
+                        <li class="nav-item">
+                            <a class="nav-link mb-3" href="/logout">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="content">
                     <!-- Dashboard Section -->
                     <section id="dashboard" class="mb-5">
-                        <h2 class="mb-4">Seller Dashboard</h2>
+                        <h2 class="mb-4 maroon-text">Seller Dashboard</h2>
                         <div class="row">
                             <div class="col-md-3 mb-4">
                                 <div class="card stat-card bg-primary text-white">
@@ -144,10 +149,10 @@
                             </div>
                         </div>
                         <div class="row mt-4">
-                            <div class="col-md-6 mb-4">
+                            <div class="col-md-6 mb-2">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="card-title mb-0">Recent Orders</h5>
+                                        <h5 class="card-title mb-0 maroon-text">Recent Orders</h5>
                                     </div>
                                     <div class="card-body">
                                         <table class="table table-hover">
@@ -186,7 +191,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="card-title mb-0">Top Selling Products</h5>
+                                        <h5 class="card-title mb-0 maroon-text">Top Selling Products</h5>
                                     </div>
                                     <div class="card-body">
                                         <table class="table table-hover">
@@ -228,15 +233,12 @@
                     <!-- Products Section -->
                     <section id="products" class="mb-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h2 class="h4">Products</h2>
-                            <button class="btn btn-sm btn-ebay" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                                <i class="fas fa-plus me-1"></i>Add Product
-                            </button>
+                            <h2 class="h4 maroon-text">Products</h2>
                         </div>
                         <div class="card">
                             <div class="card-body p-0">
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-sm mb-0">
+                                    <table class="table table-hover mb-0 text-center">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -298,11 +300,11 @@
 
                     <!-- Orders Section -->
                     <section id="orders" class="mb-5">
-                        <h2 class="mb-4">Orders</h2>
+                        <h2 class="mb-4 maroon-text">Orders</h2>
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover text-center">
                                         <thead>
                                             <tr>
                                                 <th>Order ID</th>
@@ -361,67 +363,7 @@
             </main>
         </div>
     </div>
-
-    <!-- Add Product Modal -->
-    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="productName" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="productName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productCategory" class="form-label">Category</label>
-                            <select class="form-select" id="productCategory">
-                                <option value="jewelry">Jewelry</option>
-                                <option value="fashion">Fashion</option>
-                                <option value="electronics">Electronics</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productPrice" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="productPrice" step="0.01" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productStock" class="form-label">Stock</label>
-                            <input type="number" class="form-control" id="productStock" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="productDescription" rows="3"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productImage" class="form-label">Product Image</label>
-                            <input type="file" class="form-control" id="productImage">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-ebay">Add Product</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- 
-    <script th:inline="javascript">
-        // Dynamic functionality can be added here in the future
-        // For example:
-        // const products = /*[[${products}]]*/ [];
-        // const orders = /*[[${orders}]]*/ [];
-        // function updateTable(data, tableId) {
-        //     // Update table logic
-        // }
-        </script>
-    -->
     <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
   <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
