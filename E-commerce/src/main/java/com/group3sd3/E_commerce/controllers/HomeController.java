@@ -85,44 +85,44 @@ public class HomeController {
     }
 
 
-    // /* FOR THE MEAN TIME AND FOR TESTING */
-    // @GetMapping("/orders")
-    // public String orders() {
-    //     return "seller_orders";
-    // }
-    // @GetMapping("/analytics")
-    // public String analytics() {
-    //     return "seller_analytics";
-    // }
-    // @GetMapping("/messages")
-    // public String messages() {
-    //     return "seller_messages";
-    // }
-    // @GetMapping("/sproducts")
-    // public String sproducts() {
-    //     return "seller_products";
-    // }
-    // @GetMapping("/ssettings")
-    // public String ssettigs() {
-    //     return "seller_settings";
-    // }
+    /* FOR THE MEAN TIME AND FOR TESTING */
+    @GetMapping("/orders")
+    public String orders() {
+        return "seller_orders";
+    }
+    @GetMapping("/analytics")
+    public String analytics() {
+        return "seller_analytics";
+    }
+    @GetMapping("/messages")
+    public String messages() {
+        return "seller_messages";
+    }
+    @GetMapping("/sproducts")
+    public String sproducts() {
+        return "seller_products";
+    }
+    @GetMapping("/ssettings")
+    public String ssettigs() {
+        return "seller_settings";
+    }
 
-    // /* FOR THE MEAN TIME AND FOR TESTING */
-    //     @GetMapping("ausers")
-    //     public String ausers() {
-    //         return "admin_users";
-    //     }
-    //     @GetMapping("aadmin")
-    //     public String aadmin() {
-    //         return "admin_admin";
-    //     }
-    //     @GetMapping("aproducts")
-    //     public String aprodcuts() {
-    //         return "admin_products";
-    //     }
-    //     @GetMapping("areports")
-    //     public String areports() {
-    //         return "admin_reports";
-    //     }
-    // }
+    /* FOR THE MEAN TIME AND FOR TESTING */
+        @GetMapping("ausers")
+        public String ausers() {
+            return "admin_users";
+        }
+        @GetMapping("aadmin")
+        public String aadmin() {
+            return "admin_admin";
+        }
+        @GetMapping("aproducts")
+        public String aprodcuts() {
+            return "admin_products";
+        }
+        @GetMapping("areports")
+        public String areports() {
+            return "admin_reports";
+        }
 }
+
