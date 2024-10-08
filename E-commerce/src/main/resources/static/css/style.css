@@ -38,7 +38,9 @@
 
 .nav-link {
     color: maroon;
+    font-weight: bold;
 }
+
 .nav-link:hover {
     color: black; /* Optional: Change color on hover if you want */
 }
@@ -182,9 +184,6 @@
     background-color: #e9ecef;
 }
 /* Watchlist */
-.nav-link.active {
-    background-color: #e9ecef;
-}
 .watchlist-header {
     background-color: #f8f9fa;
     border-bottom: 1px solid #dee2e6;
@@ -216,9 +215,6 @@
     overflow-y: auto;
 }
 /* My Purchases */
-.nav-link.active {
-    background-color: #e9ecef;
-}
 .purchases-header {
     background-color: #f8f9fa;
     border-bottom: 1px solid #dee2e6;
