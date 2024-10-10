@@ -67,6 +67,10 @@ public class HomeController {
     public String acategories() {
         return "admin_categories";
     }
+    @GetMapping("checkout")
+    public String checkout() {
+        return "checkout";
+    }
 
     /* Kurt's Testing Mapping For Design */
     @GetMapping("/admin")
