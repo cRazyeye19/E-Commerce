@@ -71,6 +71,10 @@ public class HomeController {
     public String checkout() {
         return "checkout";
     }
+    @GetMapping("success")
+    public String success() {
+        return "success";
+    }
 
     /* Kurt's Testing Mapping For Design */
     @GetMapping("/admin")
