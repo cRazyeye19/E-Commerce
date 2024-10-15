@@ -71,6 +71,10 @@ public class HomeController {
     public String checkout() {
         return "checkout";
     }
+    @GetMapping("payment")
+    public String payment() {
+        return "payment";
+    }
     @GetMapping("success")
     public String success() {
         return "success";

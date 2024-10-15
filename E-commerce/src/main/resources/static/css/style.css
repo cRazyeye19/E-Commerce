@@ -694,6 +694,97 @@ body {
     font-size: 2rem;
     color: var(--ebay-blue);
 }
+/* Payment */
+.gcash-payment-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.gcash-payment-header {
+    background: linear-gradient(135deg, maroon 0%, maroon 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+.gcash-qr-code-wrapper {
+    max-width: 250px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+.gcash-qr-code-wrapper:hover {
+    transform: scale(1.05);
+}
+.gcash-product-thumbnail {
+    max-width: 80px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.gcash-countdown-timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: maroon;
+}
+.gcash-confirm-btn {
+    background: linear-gradient(135deg, maroon 0%, maroon 100%);
+    border: none;
+    color: white;
+}
+.gcash-cancel-btn {
+    background-color: #f8f9fa;
+    color: maroon;
+    border: 2px solid maroon;
+}
+.gcash-payment-steps {
+    counter-reset: step;
+    padding-left: 0;
+}
+.gcash-payment-steps li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+}
+.gcash-payment-steps li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: maroon;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@keyframes gcash-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.gcash-pulse-animation {
+    animation: gcash-pulse 2s infinite;
+}
+.gcash-order-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.gcash-order-pagination a {
+    color: #6e48aa;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0 0.5rem;
+}
+.gcash-order-pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
 /* Register */
 .hero-section {
     background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
