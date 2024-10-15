@@ -44,9 +44,11 @@
     </header>
 
     <div class="gcash-payment-container">
-        <div class="gcash-payment-header">
+        <div class="gcash-payment-header position-relative">
             <h1 class="display-6 mb-0">GCash QR Code Payment</h1>
             <p class="lead">Scan to complete your purchase</p>
+            <div class="gcash-emoji gcash-emoji-money">💸</div>
+            <div class="gcash-emoji gcash-emoji-phone">📱</div>
         </div>
         <div class="container py-4">
             <div class="row g-4">
@@ -55,14 +57,14 @@
                         <div class="card-body">
                             <h2 class="card-title h4 mb-4">Order Summary</h2>
                             <div class="gcash-order-item d-flex align-items-center mb-3">
-                                <img src="/images/limited5.jpg" alt="Product Image" class="gcash-product-thumbnail me-3" style="height: 80px; width: 80px;">
+                                <img src="/images/limited5.jpg" alt="Product Image" class="gcash-product-thumbnail me-3" style="height: 100px; width: 100px;">
                                 <div>
                                     <h3 class="h6 mb-1">Vintage Leather Jacket</h3>
                                     <p class="mb-0 text-muted">Quantity: 1</p>
                                     <p class="mb-0 fw-bold">₱4,999.00</p>
                                 </div>
                             </div>
-                            <!-- Commented out Thymeleaf dynamic content
+                            <!-- Commented out dynamic content
                             <div th:each="item, itemStat : ${orderItems}" th:if="${itemStat.index == param.page}" class="gcash-order-item d-flex align-items-center mb-3">
                                 <img th:src="${item.imageUrl}" th:alt="${item.name}" class="gcash-product-thumbnail me-3">
                                 <div>

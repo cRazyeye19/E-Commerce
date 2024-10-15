@@ -776,7 +776,7 @@ body {
     margin-top: 1rem;
 }
 .gcash-order-pagination a {
-    color: #6e48aa;
+    color: #800000;
     font-size: 1.5rem;
     text-decoration: none;
     padding: 0 0.5rem;
@@ -784,6 +784,33 @@ body {
 .gcash-order-pagination a.disabled {
     color: #ccc;
     pointer-events: none;
+}
+.gcash-emoji {
+    font-size: 2rem;
+    position: absolute;
+    opacity: 0;
+}
+@keyframes gcash-float-up {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+.gcash-emoji-money {
+    animation: gcash-float-up 3s ease-out infinite;
+    left: 10%;
+}
+.gcash-emoji-phone {
+    animation: gcash-float-up 3s ease-out infinite 1s;
+    right: 10%;
+}
+@keyframes gcash-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.gcash-emoji-loading {
+    animation: gcash-spin 2s linear infinite;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
 }
 /* Register */
 .hero-section {
