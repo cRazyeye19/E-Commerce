@@ -2,6 +2,8 @@ package com.group3sd3.E_commerce.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class HomeController {
@@ -95,8 +97,7 @@ public class HomeController {
     public String seller() {
         return "seller_dashboard";
     }
-
-
+    
     // /* FOR THE MEAN TIME AND FOR TESTING */
     // @GetMapping("/orders")
     // public String orders() {

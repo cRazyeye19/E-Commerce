@@ -24,7 +24,18 @@ to   {
     25% { color: purple; }
     50% { color: #ffac41; }
     100% { color: #4cff4c; }
-}  
+} 
+/* Login */
+.logo-container {
+    background-color: maroon;
+    padding: 2rem;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.logo-container img {
+    max-width: 150px;
+}
 /* Products */
 .bg-products {
     background-color: maroon;
@@ -348,6 +359,7 @@ to   {
     background-color: maroon;
     color: yellow;
     transition: background-color 0.3s, color 0.3s; 
+    border-radius: 20px;
 }
 .btn-ebay:hover {
     background-color: yellow;

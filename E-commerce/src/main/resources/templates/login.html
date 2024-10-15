@@ -4,79 +4,164 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In | Page</title>
-    <link
-      rel="stylesheet"
-      href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css"
-    />
-  </head>
-  <body>
-    <div class="container-fluid min-vh-100 d-flex flex-column"></div>
-        <header class="row p-3">
-            <div class="col">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png" alt="eBay Logo" height="40">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        :root {
+            --ebay-blue: #0064D2;
+            --ebay-red: #e53238;
+            --ebay-yellow: #f5af02;
+            --ebay-green: #86b817;
+        }
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+        .social-login {
+            border-top: 1px solid #dee2e6;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        .social-login-btn {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .social-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 100, 210, 0.25);
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefits-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .benefits-list i {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--ebay-green);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="/images/TekMart.png" alt="TeknoyMart" height = "120">
             </div>
-        </header>
-
-        <main class="row flex-grow-1 justify-content-center align-items-center">
-            <div class="col-md-4">
-                <h1 class="text-center mb-2">Hello</h1>
-                <p class="text-center mb-4">
-                    Sign in to eBay or <a href="#" class="text-primary text-decoration-none">create an account</a>
-                </p>
-
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Email or username" required>
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <h2 class="card-title text-center mb-4 maroon-text">Welcome Back</h2>
+                            <form id="loginForm" action="#" method="post">
+                                <!-- th:action="@{/login}" -->
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                    <!-- th:field="*{username}" -->
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <!-- th:field="*{password}" -->
+                                </div>                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-ebay">Sign In</button>
+                                </div>
+                            </form>
+                            <div class="text-center mt-3">
+                                <a href="#" class="text-decoration-none maroon-text">Forgot password?</a>
+                            </div>
+                            <div class="social-login">
+                                <p class="text-center mb-3 maroon-text">Or sign in with:</p>
+                                <button class="btn btn-outline-danger social-login-btn">
+                                    <i class="fab fa-google me-2"></i> Google
+                                </button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <p>Don't have an account? <a href="#" class="text-decoration-none maroon-text">Sign up</a></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Continue</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4 maroon-text">Discover TeknoyMart</h3>
+                            <div class="video-container mb-4">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/7BjUD2-a5-g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4 class="mb-3 maroon-text">Why Choose TeknoyMart?</h4>
+                            <ul class="benefits-list">
+                                <li><i class="fas fa-globe"></i> Access to a global marketplace</li>
+                                <li><i class="fas fa-tags"></i> Competitive prices on millions of items</li>
+                                <li><i class="fas fa-shield-alt"></i> Secure transactions and buyer protection</li>
+                                <li><i class="fas fa-box-open"></i> Unique and hard-to-find products</li>
+                                <li><i class="fas fa-hand-holding-usd"></i> Easy selling platform for entrepreneurs</li>
+                            </ul>
+                        </div>
                     </div>
-                </form>
-
-                <div class="divider mb-3">
-                    <span>or</span>
-                </div>
-
-                <div class="d-grid gap-2">
-                    <button class="btn btn-lg btn-facebook">
-                        <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
-                    </button>
-                    <button class="btn btn-lg btn-google">
-                        <i class="fab fa-google me-2"></i> Continue with Google
-                    </button>
-                    <button class="btn btn-lg btn-apple">
-                        <i class="fab fa-apple me-2"></i> Continue with Apple
-                    </button>
-                </div>
-
-                <div class="form-check mt-3">
-                    <input class="form-check-input" type="checkbox" id="staySignedIn">
-                    <label class="form-check-label" for="staySignedIn">
-                        Stay signed in
-                        <i class="fas fa-info-circle ms-1" data-bs-toggle="tooltip" title="Check this box to stay signed in on this device."></i>
-                    </label>
                 </div>
             </div>
-        </main>
-
-        <footer class="row p-3">
-            <div class="col text-center">
-                <small class="text-muted">
-                    Copyright © 1995-2024 eBay Inc. All Rights Reserved. 
-                    <a href="#" class="text-muted text-decoration-none">User Agreement</a>, 
-                    <a href="#" class="text-muted text-decoration-none">Privacy</a>, 
-                    <a href="#" class="text-muted text-decoration-none">Payments Terms of Use</a>, 
-                    <a href="#" class="text-muted text-decoration-none">Cookies</a> and 
-                    <a href="#" class="text-muted text-decoration-none">AdChoice</a>
-                    <i class="fas fa-info-circle ms-1" data-bs-toggle="tooltip" title="Learn more about AdChoice"></i>
-                </small>
-            </div>
-        </footer>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
     <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
