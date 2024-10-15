@@ -116,7 +116,7 @@
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
                             <h2 class="card-title h4 mb-4">Scan QR Code to Pay</h2>
-                            <div class="gcash-qr-code-wrapper mb-3 gcash-pulse-animation">
+                            <div class="gcash-qr-code-wrapper mb-3 gcash-pulse-animation" data-bs-toggle="modal" data-bs-target="#qrCodeModal">
                                 <img src="/images/gcash.png" alt="Product Image" class="gcash-product-thumbnail me-3" style="height: 100px; width: 100px;">
                             </div>
                             <!-- Commented out Thymeleaf dynamic QR code
@@ -167,6 +167,24 @@
                     </a>
                 </div>
                 -->
+            </div>
+        </div>
+    </div>
+
+        <!-- QR Code Modal -->
+    <div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="qrCodeModalLabel">GCash QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/images/gcash.png?height=400&width=400" alt="GCash QR Code" class="gcash-modal-qr-code">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn gcash-cancel-btn" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

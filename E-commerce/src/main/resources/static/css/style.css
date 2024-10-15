@@ -664,6 +664,10 @@ body {
     color: var(--ebay-blue);
 }
 /* Payment */
+.gcash-modal-qr-code {
+    max-width: 100%;
+    height: auto;
+}
 .gcash-payment-container {
     max-width: 900px;
     margin: 2rem auto;
