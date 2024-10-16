@@ -2,9 +2,8 @@ package com.group3sd3.E_commerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication
 public class ECommerceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ECommerceApplication.class, args);
