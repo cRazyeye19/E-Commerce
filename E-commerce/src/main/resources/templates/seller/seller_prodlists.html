@@ -200,6 +200,9 @@
                         <th scope="col">Image</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Discounted Price</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Action</th>
                       </tr>
@@ -207,6 +210,7 @@
                     <tbody>
                       <tr th:each="p,c:${products}">
                         <th scope="row">[[${c.count}]]</th>
+                        <td>[[${p.title}]]</td>
                         <td>
                           <img
                             th:src="@{'/images/product_img/'+${p.image}}"
@@ -214,9 +218,11 @@
                             height="70px"
                           />
                         </td>
-                        <td>[[${p.title}]]</td>
                         <td>[[${p.category}]]</td>
                         <td>&#8369 [[${p.price}]]</td>
+                        <td>[[${p.discount}]]</td>
+                        <td>&#8369 [[${p.discountPrice}]]</td>
+                        <td>[[${p.isActive}]]</td>
                         <td>[[${p.stock}]]</td>
                         <td>
                           <a

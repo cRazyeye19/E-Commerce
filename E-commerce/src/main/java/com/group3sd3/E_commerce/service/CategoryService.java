@@ -19,5 +19,7 @@ public interface CategoryService {
 
 	public Category getCategoryById(int id);
 
+	public List<Category> getAllActiveCategory();
+
 	Page<Category> getPaginatedCategories(Pageable pageable);
 }

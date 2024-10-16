@@ -55,6 +55,10 @@ public class ProductServiceImpl implements ProductService {
 
         Product dbProduct = getProductById(product.getId());
 
+        if (dbProduct == null) {
+            throw new RuntimeException("Product with ID " + product.getId() + " not found.");
+        }
+
         String imageName = image.isEmpty() ? dbProduct.getImage() : image.getOriginalFilename();
 
         dbProduct.setTitle(product.getTitle());
@@ -63,6 +67,12 @@ public class ProductServiceImpl implements ProductService {
         dbProduct.setPrice(product.getPrice());
         dbProduct.setStock(product.getStock());
         dbProduct.setImage(imageName);
+        dbProduct.setIsActive(product.getIsActive());
+		dbProduct.setDiscount(product.getDiscount());
+
+        Double disocunt = product.getPrice() * (product.getDiscount() / 100.0);
+		Double discountPrice = product.getPrice() - disocunt;
+		dbProduct.setDiscountPrice(discountPrice);
 
         Product updateProduct = productRepository.save(dbProduct);
 
@@ -88,4 +98,15 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
+    @Override
+	public List<Product> getAllActiveProducts(String category) {
+		List<Product> products = null;
+		if (ObjectUtils.isEmpty(category)) {
+			products = productRepository.findByIsActiveTrue();
+		}else {
+			products=productRepository.findByCategory(category);
+		}
+
+		return products;
+	}
 }

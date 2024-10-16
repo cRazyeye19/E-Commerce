@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="~{header::layout(~{::section})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,288 +11,268 @@
   </head>
 </head>
 <body>
-    <header class="bg-products text-white py-3">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3">
-                    <h1 class="h3 mb-0">LOGO HERE</h1>
-                </div>
-                <div class="col-md-6">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search for anything" aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
-                </div>
-                <div class="col-md-3 text-end">
-                    <a href="#" class="btn btn-outline-light me-2">
-                        <i class="bi bi-person-circle me-2"></i>Account
-                    </a>
-                    <a href="#" class="btn btn-light">
-                        <i class="bi bi-cart-fill me-2"></i>Cart (0)
-                    </a>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Electronics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home & Garden</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Toys</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+        </nav>
+    
+        <main class="container my-5">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h2>Electronics</h2>
+                    <p>12,345 results for electronics</p>
+                </div>
+                <div class="col-md-4">
+                    <form class="d-flex">
+                        <input
+                          class="form-control me-2"
+                          type="search"
+                          placeholder="Search for anything"
+                          aria-label="Search"
+                        />
+                        <button class="btn btn-ebay" type="submit">
+                          Search
+                        </button>
+                      </form>
+                </div>
+            </div>
+    
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Smartphone X">
+                        <div class="card-body">
+                            <h5 class="card-title">Smartphone X</h5>
+                            <p class="card-text">Latest model with advanced features</p>
+                            <p class="fw-bold">$599.99</p>
+                            <p class="text-muted"><small>Free shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Wireless Earbuds">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireless Earbuds</h5>
+                            <p class="card-text">High-quality sound with long battery life</p>
+                            <p class="fw-bold">$129.99</p>
+                            <p class="text-muted"><small>$5.99 shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Smart Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Watch</h5>
+                            <p class="card-text">Fitness tracking and notifications</p>
+                            <p class="fw-bold">$199.99</p>
+                            <p class="text-muted"><small>Free shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Laptop Pro">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Pro</h5>
+                            <p class="card-text">Powerful performance for professionals</p>
+                            <p class="fw-bold">$1,299.99</p>
+                            <p class="text-muted"><small>Free shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="4K TV">
+                        <div class="card-body">
+                            <h5 class="card-title">4K Smart TV</h5>
+                            <p class="card-text">Immersive viewing experience</p>
+                            <p class="fw-bold">$799.99</p>
+                            <p class="text-muted"><small>$29.99 shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Bluetooth Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">Bluetooth Speaker</h5>
+                            <p class="card-text">Portable with excellent sound quality</p>
+                            <p class="fw-bold">$79.99</p>
+                            <p class="text-muted"><small>Free shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Gaming Console">
+                        <div class="card-body">
+                            <h5 class="card-title">Gaming Console</h5>
+                            <p class="card-text">Next-gen gaming experience</p>
+                            <p class="fw-bold">$499.99</p>
+                            <p class="text-muted"><small>Free shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Wireless Mouse">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireless Mouse</h5>
+                            <p class="card-text">Ergonomic design for comfort</p>
+                            <p class="fw-bold">$39.99</p>
+                            <p class="text-muted"><small>$3.99 shipping</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-grid gap-2">
+                                <a href="/product" class="btn btn-ebay">View Product</a>
+                                <a href="#" class="btn btn-outline-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Pagination -->
+            <nav aria-label="Product pagination" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Electronics</a>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fashion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home & Garden</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Toys</a>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container my-5">
-        <div class="row mb-4">
-            <div class="col-md-8">
-                <h2>Electronics</h2>
-                <p>12,345 results for electronics</p>
-            </div>
-            <div class="col-md-4">
-                <select class="form-select">
-                    <option selected>Sort by: Best Match</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Time: Ending Soonest</option>
-                    <option>Time: Newly Listed</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <!-- Commented out Thymeleaf dynamic content -->
-            <!--<div th:each="product : ${products}" class="col">-->
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Smartphone X">
-                    <div class="card-body">
-                        <h5 class="card-title">Smartphone X</h5>
-                        <p class="card-text">Latest model with advanced features</p>
-                        <p class="fw-bold">$599.99</p>
-                        <p class="text-muted"><small>Free shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Wireless Earbuds">
-                    <div class="card-body">
-                        <h5 class="card-title">Wireless Earbuds</h5>
-                        <p class="card-text">High-quality sound with long battery life</p>
-                        <p class="fw-bold">$129.99</p>
-                        <p class="text-muted"><small>$5.99 shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Smart Watch">
-                    <div class="card-body">
-                        <h5 class="card-title">Smart Watch</h5>
-                        <p class="card-text">Fitness tracking and notifications</p>
-                        <p class="fw-bold">$199.99</p>
-                        <p class="text-muted"><small>Free shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Laptop Pro">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop Pro</h5>
-                        <p class="card-text">Powerful performance for professionals</p>
-                        <p class="fw-bold">$1,299.99</p>
-                        <p class="text-muted"><small>Free shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="4K TV">
-                    <div class="card-body">
-                        <h5 class="card-title">4K Smart TV</h5>
-                        <p class="card-text">Immersive viewing experience</p>
-                        <p class="fw-bold">$799.99</p>
-                        <p class="text-muted"><small>$29.99 shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Bluetooth Speaker">
-                    <div class="card-body">
-                        <h5 class="card-title">Bluetooth Speaker</h5>
-                        <p class="card-text">Portable with excellent sound quality</p>
-                        <p class="fw-bold">$79.99</p>
-                        <p class="text-muted"><small>Free shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Gaming Console">
-                    <div class="card-body">
-                        <h5 class="card-title">Gaming Console</h5>
-                        <p class="card-text">Next-gen gaming experience</p>
-                        <p class="fw-bold">$499.99</p>
-                        <p class="text-muted"><small>Free shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card product-card">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top product-imagee" alt="Wireless Mouse">
-                    <div class="card-body">
-                        <h5 class="card-title">Wireless Mouse</h5>
-                        <p class="card-text">Ergonomic design for comfort</p>
-                        <p class="fw-bold">$39.99</p>
-                        <p class="text-muted"><small>$3.99 shipping</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-grid gap-2">
-                            <a href="/product" class="btn btn-ebay">View Product</a>
-                            <a href="#" class="btn btn-outline-primary">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        <nav aria-label="Product pagination" class="mt-4">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
-    </main>
-
-    <footer class="bg-light pt-5">
-      <div class="bg-gold container-fluid">
-          <div class="row mt-2">
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Buy</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Registration</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Buying Guides</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Buyer Protection</a></li>
-                  </ul>
+            </nav>
+        </main>
+    
+        <footer class="bg-light pt-5">
+          <div class="bg-gold container-fluid">
+              <div class="row mt-2">
+                  <div class="col-md-3 col-sm-6 text-center">
+                      <h5 class="fw-bold mt-4 maroon-text">Buy</h5>
+                      <ul class="list-unstyled text-center">
+                          <li><a href="#" class="maroon-text text-decoration-none">Registration</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">Buying Guides</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">Buyer Protection</a></li>
+                      </ul>
+                  </div>
+                 
+                  <div class="col-md-3 col-sm-6 text-center">
+                      <h5 class="fw-bold mt-4 maroon-text">Sell</h5>
+                      <ul class="list-unstyled text-center">
+                          <li><a href="#" class="maroon-text text-decoration-none">Start Selling</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">Learn to Sell</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">Seller Protection</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="col-md-3 col-sm-6 text-center">
+                      <h5 class="fw-bold mt-4 maroon-text">Tools & Apps</h5>
+                      <ul class="list-unstyled text-center">
+                          <li><a href="#" class="maroon-text text-decoration-none">Mobile App</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">eBay Shops</a></li>
+                      </ul>
+                  </div>
+                 
+                  <div class="col-md-3 col-sm-6 text-center">
+                      <h5 class="fw-bold mt-4 maroon-text">Help & Contact</h5>
+                      <ul class="list-unstyled text-center">
+                          <li><a href="#" class="maroon-text text-decoration-none">Customer Service</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">FAQs</a></li>
+                          <li><a href="#" class="maroon-text text-decoration-none">Contact Us</a></li>
+                      </ul>
+                  </div>
               </div>
-             
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Sell</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Start Selling</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Learn to Sell</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Seller Protection</a></li>
-                  </ul>
-              </div>
-              
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Tools & Apps</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Mobile App</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">eBay Shops</a></li>
-                  </ul>
-              </div>
-             
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Help & Contact</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Customer Service</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">FAQs</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Contact Us</a></li>
-                  </ul>
+      
+              <hr>
+      
+              <div class="text-center pb-4">
+                  <p class="maroon-text mb-0">&copy; 2024 ShopEase. All Rights Reserved.</p>
+                  <div class="d-flex justify-content-center">
+                      <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-facebook"></i></a>
+                      <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-twitter"></i></a>
+                      <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-instagram"></i></a>
+                      <a href="#" class="maroon-text text-decoration-none"><i class="bi bi-linkedin"></i></a>
+                  </div>
               </div>
           </div>
-  
-          <hr>
-  
-          <div class="text-center pb-4">
-              <p class="maroon-text mb-0">&copy; 2024 ShopEase. All Rights Reserved.</p>
-              <div class="d-flex justify-content-center">
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="maroon-text text-decoration-none"><i class="bi bi-linkedin"></i></a>
-              </div>
-          </div>
-      </div>
-  </footer>
+      </footer>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

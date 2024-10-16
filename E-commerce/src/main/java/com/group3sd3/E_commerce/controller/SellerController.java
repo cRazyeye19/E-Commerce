@@ -52,7 +52,8 @@ public class SellerController {
         String imageName = image.isEmpty() ? "default.jpg" : image.getOriginalFilename();
 
         product.setImage(imageName);
-
+        product.setDiscount(0);
+        product.setDiscountPrice(product.getPrice());
         Product saveProduct = productService.saveProduct(product);
 
         if (!ObjectUtils.isEmpty(saveProduct)) {
@@ -62,7 +63,7 @@ public class SellerController {
             Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + "product_img" + File.separator
                     + image.getOriginalFilename());
 
-            System.out.println(path);
+            // System.out.println(path);
             Files.copy(image.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
             session.setAttribute("succMsg", "Product Saved Success");
@@ -97,17 +98,20 @@ public class SellerController {
         return "seller/seller_editprod";
     }
 
-    @PostMapping("/updateProduct")
-    public String updateProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile image,
-            HttpSession session, Model m) {
+	@PostMapping("/updateProduct")
+	public String updateProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile image,
+			HttpSession session, Model m) {
 
-        Product updateProduct = productService.updateProduct(product, image);
-        if (!ObjectUtils.isEmpty(updateProduct)) {
-            session.setAttribute("succMsg", "Product update success");
-        } else {
-            session.setAttribute("errorMsg", "Something wrong on server");
-        }
-
-        return "redirect:/seller/editProduct/" + product.getId();
-    }
+		if (product.getDiscount() < 0 || product.getDiscount() > 100) {
+			session.setAttribute("errorMsg", "invalid Discount");
+		} else {
+			Product updateProduct = productService.updateProduct(product, image);
+			if (!ObjectUtils.isEmpty(updateProduct)) {
+				session.setAttribute("succMsg", "Product update success");
+			} else {
+				session.setAttribute("errorMsg", "Something wrong on server");
+			}
+		}
+		return "redirect:/seller/editProduct/" + product.getId();
+	}
 }
