@@ -26,15 +26,47 @@ to   {
     100% { color: #4cff4c; }
 } 
 /* Login */
-.logo-container {
-    background-color: maroon;
-    padding: 2rem;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+.ecommerce-login-body {
+    background-color: #800000; /* Maroon background */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.logo-container img {
-    max-width: 150px;
+.ecommerce-login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.ecommerce-btn-maroon {
+    background-color: #800000;
+    border-color: #800000;
+    color: white;
+}
+.ecommerce-btn-maroon:hover {
+    background-color: #600000;
+    border-color: #600000;
+    color: white;
+}
+.ecommerce-video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background-size: cover;
+}
+.ecommerce-audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
 }
 /* Products */
 .bg-products {
