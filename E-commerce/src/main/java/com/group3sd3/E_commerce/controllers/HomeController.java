@@ -17,6 +17,11 @@ public class HomeController {
         return "login";
     }
 
+    @GetMapping("/reset") 
+    public String reset() {
+        return "reset";
+    }
+
     @GetMapping("/register")
     public String Register() {
         return "register";
