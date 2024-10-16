@@ -86,6 +86,10 @@ public class HomeController {
     public String success() {
         return "success";
     }
+    @GetMapping("rsuccess") 
+    public String rsuccess() {
+        return "successreset";
+    }
 
     /* Kurt's Testing Mapping For Design */
     @GetMapping("/admin")

@@ -99,7 +99,7 @@ to   {
     }
 }
 .sparkle-animation::after {
-    content: "✨";
+    content: "✨✨";
     position: absolute;
     top: 50%;
     left: 0;
@@ -128,7 +128,7 @@ to   {
 }
 .fp-container {
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 40px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     max-width: 400px;
@@ -191,6 +191,45 @@ to   {
 .fp-form-text {
     color: #333;
     margin-bottom: 15px;
+}
+/* Reset Password Success */
+.success-body {
+    background-color: #800000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+.success-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+.success-title {
+    color: #800000;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.success-text {
+    color: #333;
+    margin-bottom: 15px;
+}
+.success-video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background-size: cover;
 }
 /* Products */
 .bg-products {
@@ -490,7 +529,6 @@ to   {
 .custom-margin {
     margin-right: 130px;
 }
-
 /* Transferred styles from cart.html */
 .cart-item-image {
     width: 80px;
