@@ -64,10 +64,61 @@ to   {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.692);
     padding: 10px;
     border-radius: 5px;
 }
+.sparkle-animation {
+    position: relative;
+    display: inline-block;
+    color: #800000; /* Adjust maroon color */
+    font-weight: bold;
+    overflow: hidden;
+  }
+  
+  .sparkle-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: sparkle 2s infinite;
+  }
+  
+  @keyframes sparkle {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 200%;
+    }
+  }
+  .sparkle-animation::after {
+    content: "✨";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 1.2rem;
+    color: #FFD700; /* Gold color */
+    opacity: 0;
+    animation: sparkleParticles 2s infinite;
+  }
+  
+  @keyframes sparkleParticles {
+    0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    50% { opacity: 1; transform: translate(50%, -50%) scale(1); }
+  }
+  .d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Products */
 .bg-products {
     background-color: maroon;

@@ -23,9 +23,14 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12" style="max-width: 800px; margin: 0 auto;">
                 <div class="ecommerce-login-container">
-                    <h2 class="text-center mb-4">Login to Your Account</h2>
+                    <div class="text-center mb-4">
+                        <img src="/images/TekMart.png" alt="Login Logo" class="img-fluid" style="max-width: 130px;">
+                    </div>                    
+                    <div class="text-center d-flex justify-content-center mb-4">
+                        <h2 class="maroon-text sparkle-animation">Login to Your Account</h2>
+                    </div>                    
                     <form>
                         <!-- Thymeleaf form action would go here -->
                         <!-- <form th:action="@{/login}" method="post"> -->
@@ -46,11 +51,11 @@
                         </div>
                     </form>
                     <div class="text-center mt-3">
-                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                        <a href="#" class="text-decoration-none maroon-text">Forgot password?</a>
                     </div>
                     <hr>
                     <div class="text-center">
-                        <p>Don't have an account? <a href="#" class="text-decoration-none">Sign up</a></p>
+                        <p>Don't have an account? <a href="/register" class="text-decoration-none maroon-text">Sign up</a></p>
                     </div>
                 </div>
             </div>
