@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -24,7 +26,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.group3sd3.E_commerce.model.Category;
+import com.group3sd3.E_commerce.model.User;
 import com.group3sd3.E_commerce.service.CategoryService;
+import com.group3sd3.E_commerce.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -34,6 +38,26 @@ public class AdminController {
 
 	@Autowired
 	private CategoryService categoryService;
+
+	@Autowired
+	private UserService userService;
+
+	@ModelAttribute
+	public void getUserDetails(Principal p, Model m) {
+		if (p != null) {
+			String email = p.getName();
+			User userDtls = userService.getUserByEmail(email);
+			m.addAttribute("user", userDtls);
+		}
+
+		List<Category> allActiveCategory = categoryService.getAllActiveCategory();
+		m.addAttribute("categorys", allActiveCategory);
+	}
+
+	@GetMapping("/")
+	public String admin() {
+		return "admin/admin_dashboard";
+	}
 
 	@GetMapping("/category")
 	public String category(Model m, @RequestParam(defaultValue = "0") int page,
