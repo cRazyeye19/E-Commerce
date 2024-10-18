@@ -38,6 +38,11 @@ public class SellerController {
     @Autowired
     private CategoryService categoryService;
 
+    @GetMapping("/")
+    public String seller() {
+        return "seller/seller_dashboard";
+    }
+
     @GetMapping("/addProduct")
     public String addProduct(Model m) {
         List<Category> categories = categoryService.getAllCategory();

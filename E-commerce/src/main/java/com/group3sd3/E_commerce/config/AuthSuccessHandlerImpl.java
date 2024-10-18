@@ -26,9 +26,10 @@ public class AuthSuccessHandlerImpl implements AuthenticationSuccessHandler {
 
         if (roles.contains("ROLE_ADMIN")) {
             response.sendRedirect("/admin/");
+        } else if (roles.contains("ROLE_SELLER")) {
+            response.sendRedirect("/seller/");
         } else {
             response.sendRedirect("/");
         }
-
     }
 }

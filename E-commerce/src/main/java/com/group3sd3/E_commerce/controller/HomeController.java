@@ -81,6 +81,11 @@ public class HomeController {
         return "register";
     }
 
+    @GetMapping("/register/seller")
+    public String registerSeller() {
+        return "seller/seller_register";
+    }
+
     @GetMapping("/admin")
     public String admin() {
         return "admin/admin_dashboard";
@@ -138,6 +143,32 @@ public class HomeController {
         }
 
         return "redirect:/register";
+    }
+
+    @PostMapping("/saveSeller")
+    public String saveSeller(@ModelAttribute User user, @RequestParam("img") MultipartFile file, HttpSession session)
+            throws IOException {
+
+        String imageName = file.isEmpty() ? "default.jpg" : file.getOriginalFilename();
+        user.setProfileImage(imageName);
+        User saveSeller = userService.saveSeller(user);
+
+        if (!ObjectUtils.isEmpty(saveSeller)) {
+            if (!file.isEmpty()) {
+                File saveFile = new ClassPathResource("static/images").getFile();
+
+                Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + "profile_img" + File.separator
+                        + file.getOriginalFilename());
+
+                System.out.println(path);
+                Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+            }
+            session.setAttribute("succMsg", "Register successfully");
+        } else {
+            session.setAttribute("errorMsg", "something wrong on server");
+        }
+
+        return "redirect:/register/seller";
     }
 
     @GetMapping("/forgot-password")

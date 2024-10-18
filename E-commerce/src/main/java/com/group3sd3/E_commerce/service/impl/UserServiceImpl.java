@@ -36,6 +36,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User saveSeller(User user) {
+        user.setRole("ROLE_SELLER");
+        user.setIsEnable(true);
+        user.setAccountNonLocked(true);
+        user.setFailedAttempt(0);
+
+        String encodePassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
+        User saveSeller = userRepository.save(user);
+        return saveSeller;
+    }
+
+    @Override
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }

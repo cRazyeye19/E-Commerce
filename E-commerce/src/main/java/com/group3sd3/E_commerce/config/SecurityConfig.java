@@ -45,6 +45,7 @@ public class SecurityConfig {
 		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.disable())
 				.authorizeHttpRequests(req -> req.requestMatchers("/user/**").hasRole("USER")
 						.requestMatchers("/admin/**").hasRole("ADMIN")
+						.requestMatchers("/seller/**").hasRole("SELLER")
 						.requestMatchers("/**").permitAll())
 				.formLogin(form -> form.loginPage("/login")
 						.loginProcessingUrl("/login")

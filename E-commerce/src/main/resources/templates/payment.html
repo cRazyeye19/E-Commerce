@@ -1,70 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-<body>
+  <body>
     <header class="border-bottom">
-        <div class="container">
-            <div class="row py-2 align-items-center">
-                <div class="col d-flex align-items-center">
-                    <span class="me-2">Hi!</span>
-                    <a href="/login" class="text-decoration-underline me-1">Sign in</a>
-                    <span class="me-1">or</span>
-                    <a href="/register" class="text-decoration-underline">Register</a>
-                    <span class="me-1">or</span>
-                    <a href="/admin" class="text-decoration-underline">Admin</a>
-                    <span class="me-1">or</span>
-                    <a href="/seller" class="text-decoration-underline">Seller</a>
-                </div>
-                <div class="col d-flex justify-content-end align-items-center">
-                    <a href="/products" class="text-decoration-none me-3 text-body">Products</a>
-                    <div class="dropdown d-inline-block me-3">
-                        <button class="btn btn-link text-decoration-none p-0 dropdown-toggle text-body" type="button" id="myEbayDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            My eBay
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="myEbayDropdown">
-                            <li><a class="dropdown-item" href="/myaccount">My Account</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                        </ul>
-                    </div>
-                    <i class="bi bi-bell me-3"></i>
-                    <a href="/cart">
-                        <i class="bi bi-cart3"></i>
-                    </a>
-                </div>
+      <div class="container">
+        <div class="row py-2 align-items-center">
+          <div class="col d-flex align-items-center">
+            <th:block th:if="${user==null}">
+              <a href="/login" class="text-decoration-underline me-1"
+                >Sign in</a
+              >
+              <span class="me-1">or</span>
+              <a href="/register" class="text-decoration-underline">Register</a>
+              <span class="me-1">or</span>
+              <a href="/admin" class="text-decoration-underline">Admin</a>
+              <span class="me-1">or</span>
+              <a href="/seller" class="text-decoration-underline">Seller</a>
+            </th:block>
+          </div>
+          <div class="col d-flex justify-content-end align-items-center">
+            <a href="/products" class="text-decoration-none me-3 text-body"
+              >Products</a
+            >
+            <div class="dropdown d-inline-block me-3">
+              <button
+                class="btn btn-link text-decoration-none p-0 dropdown-toggle text-body"
+                type="button"
+                id="myEbayDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                My eBay
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="myEbayDropdown">
+                <li>
+                  <a class="dropdown-item" href="/myaccount">My Account</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
             </div>
+            <i class="bi bi-bell me-3"></i>
+            <a href="/cart">
+              <i class="bi bi-cart3"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </header>
 
     <div class="gcash-payment-container">
-        <div class="gcash-payment-header position-relative">
-            <h1 class="display-6 mb-0">GCash QR Code Payment</h1>
-            <p class="lead">Scan to complete your purchase</p>
-            <div class="gcash-emoji gcash-emoji-money">💸</div>
-            <div class="gcash-emoji gcash-emoji-phone">📱</div>
-        </div>
-        <div class="container py-4">
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h2 class="card-title h4 mb-4">Order Summary</h2>
-                            <div class="gcash-order-item d-flex align-items-center mb-3">
-                                <img src="/images/limited5.jpg" alt="Product Image" class="gcash-product-thumbnail me-3" style="height: 100px; width: 100px;">
-                                <div>
-                                    <h3 class="h6 mb-1">Vintage Leather Jacket</h3>
-                                    <p class="mb-0 text-muted">Quantity: 1</p>
-                                    <p class="mb-0 fw-bold">₱4,999.00</p>
-                                </div>
-                            </div>
-                            <!-- Commented out dynamic content
+      <div class="gcash-payment-header position-relative">
+        <h1 class="display-6 mb-0">GCash QR Code Payment</h1>
+        <p class="lead">Scan to complete your purchase</p>
+        <div class="gcash-emoji gcash-emoji-money">💸</div>
+        <div class="gcash-emoji gcash-emoji-phone">📱</div>
+      </div>
+      <div class="container py-4">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h2 class="card-title h4 mb-4">Order Summary</h2>
+                <div class="gcash-order-item d-flex align-items-center mb-3">
+                  <img
+                    src="/images/limited5.jpg"
+                    alt="Product Image"
+                    class="gcash-product-thumbnail me-3"
+                    style="height: 100px; width: 100px"
+                  />
+                  <div>
+                    <h3 class="h6 mb-1">Vintage Leather Jacket</h3>
+                    <p class="mb-0 text-muted">Quantity: 1</p>
+                    <p class="mb-0 fw-bold">₱4,999.00</p>
+                  </div>
+                </div>
+                <!-- Commented out dynamic content
                             <div th:each="item, itemStat : ${orderItems}" th:if="${itemStat.index == param.page}" class="gcash-order-item d-flex align-items-center mb-3">
                                 <img th:src="${item.imageUrl}" th:alt="${item.name}" class="gcash-product-thumbnail me-3">
                                 <div>
@@ -74,16 +101,16 @@
                                 </div>
                             </div>
                             -->
-                            <div class="gcash-order-pagination">
-                                <a href="#" class="disabled">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                                <span class="mx-3">1 / 1</span>
-                                <a href="#" class="disabled">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </div>
-                            <!-- Commented out Thymeleaf pagination
+                <div class="gcash-order-pagination">
+                  <a href="#" class="disabled">
+                    <i class="fas fa-chevron-left"></i>
+                  </a>
+                  <span class="mx-3">1 / 1</span>
+                  <a href="#" class="disabled">
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+                <!-- Commented out Thymeleaf pagination
                             <div class="gcash-order-pagination">
                                 <a th:href="@{${#httpServletRequest.requestURI}(page=${param.page != null ? (param.page[0] == '0' ? '0' : param.page[0] - 1) : '0'})}"
                                    th:class="${param.page == null or param.page[0] == '0' ? 'disabled' : ''}">
@@ -99,65 +126,75 @@
                                 </a>
                             </div>
                             -->
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="h5 mb-0">Total Amount:</span>
-                                <span class="h4 mb-0 text-primary">₱4,999.00</span>
-                            </div>
-                            <!-- Commented out Thymeleaf dynamic total amount
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="h5 mb-0">Total Amount:</span>
+                  <span class="h4 mb-0 text-primary">₱4,999.00</span>
+                </div>
+                <!-- Commented out Thymeleaf dynamic total amount
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="h5 mb-0">Total Amount:</span>
                                 <span class="h4 mb-0 text-primary">₱<span th:text="${#numbers.formatDecimal(totalAmount, 0, 'COMMA', 2, 'POINT')}">0.00</span></span>
                             </div>
                             -->
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="card-title h4 mb-4">Scan QR Code to Pay</h2>
+                <div class="gcash-qr-code-wrapper mb-3 gcash-pulse-animation">
+                  <img
+                    src="/images/gcash.png"
+                    alt="Product Image"
+                    class="gcash-product-thumbnail me-3"
+                    style="height: 100px; width: 100px"
+                  />
                 </div>
-                <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <h2 class="card-title h4 mb-4">Scan QR Code to Pay</h2>
-                            <div class="gcash-qr-code-wrapper mb-3 gcash-pulse-animation">
-                                <img src="/images/gcash.png" alt="Product Image" class="gcash-product-thumbnail me-3" style="height: 100px; width: 100px;">
-                            </div>
-                            <!-- Commented out Thymeleaf dynamic QR code
+                <!-- Commented out Thymeleaf dynamic QR code
                             <div class="gcash-qr-code-wrapper mb-3 gcash-pulse-animation">
                                 <img th:src="${qrCodeUrl}" alt="GCash QR Code" class="img-fluid rounded">
                             </div>
                             -->
-                            <p class="text-muted">Scan this QR code using your GCash app to complete the payment.</p>
-                            <div class="mt-4">
-                                <h3 class="h5">Time Remaining:</h3>
-                                <p class="gcash-countdown-timer">15:00</p>
-                            </div>
-                            <!-- Commented out Thymeleaf dynamic timer
+                <p class="text-muted">
+                  Scan this QR code using your GCash app to complete the
+                  payment.
+                </p>
+                <div class="mt-4">
+                  <h3 class="h5">Time Remaining:</h3>
+                  <p class="gcash-countdown-timer">15:00</p>
+                </div>
+                <!-- Commented out Thymeleaf dynamic timer
                             <div class="mt-4">
                                 <h3 class="h5">Time Remaining:</h3>
                                 <p class="gcash-countdown-timer" th:text="${timeRemaining}">15:00</p>
                             </div>
                             -->
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h3 class="h5 mb-3">Payment Instructions:</h3>
-                    <ol class="gcash-payment-steps">
-                        <li>Open your GCash app on your smartphone.</li>
-                        <li>Tap on "Pay QR" or "Scan" in the app.</li>
-                        <li>Point your camera at the QR code above.</li>
-                        <li>Confirm the amount and complete the payment.</li>
-                    </ol>
-                </div>
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <a href="/success" class="btn gcash-confirm-btn me-2">
-                        <i class="btn-ebay"></i>Confirm Payment
-                    </a>
-                    <a href="#" class="btn gcash-cancel-btn">
-                        <i class="fas fa-times me-2"></i>Cancel
-                    </a>
-                </div>
-                <!-- Commented out Thymeleaf dynamic links
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3 class="h5 mb-3">Payment Instructions:</h3>
+            <ol class="gcash-payment-steps">
+              <li>Open your GCash app on your smartphone.</li>
+              <li>Tap on "Pay QR" or "Scan" in the app.</li>
+              <li>Point your camera at the QR code above.</li>
+              <li>Confirm the amount and complete the payment.</li>
+            </ol>
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-end">
+            <a href="/success" class="btn gcash-confirm-btn me-2">
+              <i class="btn-ebay"></i>Confirm Payment
+            </a>
+            <a href="#" class="btn gcash-cancel-btn">
+              <i class="fas fa-times me-2"></i>Cancel
+            </a>
+          </div>
+          <!-- Commented out Thymeleaf dynamic links
                 <div class="col-md-6 d-flex align-items-center justify-content-end">
                     <a th:href="@{/confirm-payment}" class="btn gcash-confirm-btn me-2">
                         <i class="fas fa-check me-2"></i>Confirm Payment
@@ -167,65 +204,117 @@
                     </a>
                 </div>
                 -->
-            </div>
         </div>
+      </div>
     </div>
 
     <footer class="bg-light pt-5">
       <div class="bg-gold container-fluid">
-          <div class="row mt-2">
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Buy</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Registration</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Buying Guides</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Buyer Protection</a></li>
-                  </ul>
-              </div>
-             
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Sell</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Start Selling</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Learn to Sell</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Seller Protection</a></li>
-                  </ul>
-              </div>
-              
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Tools & Apps</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Mobile App</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">eBay Shops</a></li>
-                  </ul>
-              </div>
-             
-              <div class="col-md-3 col-sm-6 text-center">
-                  <h5 class="fw-bold mt-4 maroon-text">Help & Contact</h5>
-                  <ul class="list-unstyled text-center">
-                      <li><a href="#" class="maroon-text text-decoration-none">Customer Service</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">FAQs</a></li>
-                      <li><a href="#" class="maroon-text text-decoration-none">Contact Us</a></li>
-                  </ul>
-              </div>
+        <div class="row mt-2">
+          <div class="col-md-3 col-sm-6 text-center">
+            <h5 class="fw-bold mt-4 maroon-text">Buy</h5>
+            <ul class="list-unstyled text-center">
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Registration</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Buying Guides</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Buyer Protection</a
+                >
+              </li>
+            </ul>
           </div>
-  
-          <hr>
-  
-          <div class="text-center pb-4">
-              <p class="maroon-text mb-0">&copy; 2024 ShopEase. All Rights Reserved.</p>
-              <div class="d-flex justify-content-center">
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="maroon-text me-3 text-decoration-none"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="maroon-text text-decoration-none"><i class="bi bi-linkedin"></i></a>
-              </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <h5 class="fw-bold mt-4 maroon-text">Sell</h5>
+            <ul class="list-unstyled text-center">
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Start Selling</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Learn to Sell</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Seller Protection</a
+                >
+              </li>
+            </ul>
           </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <h5 class="fw-bold mt-4 maroon-text">Tools & Apps</h5>
+            <ul class="list-unstyled text-center">
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Mobile App</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >eBay Shops</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-6 text-center">
+            <h5 class="fw-bold mt-4 maroon-text">Help & Contact</h5>
+            <ul class="list-unstyled text-center">
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Customer Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none">FAQs</a>
+              </li>
+              <li>
+                <a href="#" class="maroon-text text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="text-center pb-4">
+          <p class="maroon-text mb-0">
+            &copy; 2024 ShopEase. All Rights Reserved.
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="#" class="maroon-text me-3 text-decoration-none"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="maroon-text me-3 text-decoration-none"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="maroon-text me-3 text-decoration-none"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="maroon-text text-decoration-none"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
       </div>
-  </footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
     <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

@@ -8,6 +8,8 @@ public interface UserService {
 
 	public User saveUser(User user);
 
+	public User saveSeller(User user);
+
 	public User getUserByEmail(String email);
 
 	public List<User> getUsers(String role);
